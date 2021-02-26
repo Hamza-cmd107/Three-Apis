@@ -1,5 +1,6 @@
+//requiring mongoose for connecting database mongodb atlas
 const mongoose = require("mongoose");
-
+//making schema
 const postSchema = mongoose.Schema({
     item_name: {
         type : String,
@@ -11,5 +12,4 @@ const postSchema = mongoose.Schema({
     }
 
 })
-
 module.exports=Post=mongoose.model("Post", postSchema)

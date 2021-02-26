@@ -1,37 +1,22 @@
+// requiring dependencies
 const express =  require("express");
 const mongoose = require("mongoose");
 const bodyParser =require('body-parser')
-
-
 const app = express();
-// app.use(express.json())
 app.use(bodyParser.json())
 
-
+//requiring modules
 require("./mongo");
 require("./model/post");
-
-
 const Post = require("./model/post");
-// /mongoose.model("postSchema");
 
-
-
-app.get("/", async(req,res)=>{
-  res.send("<h1>Hello</h1>")
-});
-
-
-
+// first API for taking input from user
 app.post("/nameprice", async(req,res)=>{
-
     const np={
         item_name: req.body.item_name,
         price: req.body.price
     }
-
     console.log(np)
-
     const cur_post = new Post(np)
     cur_post.save().then(()=>{
         res.json({np, success:"OK"})
@@ -39,49 +24,31 @@ app.post("/nameprice", async(req,res)=>{
         console.log(err)
         res.json({np, success:"NOT OK"})
     })
-
-    // try {
-    //     const posts = await post.find({})
-    //     res.send(posts)
-    // } catch (error) {
-    //     res.status(500)
-    // }
 });
+//second API for take input item_name and fetch price of an item name according to the data present in database then the output send to the user is null.
 app.post('/price',async(req,res)=>{
-
     console.log(req.body.item_name)
-
      const np={
         item_name: req.body.item_name
-        
     }
-   
     const  PostResult = await Post.findOne(np);
-    
-
     console.log(PostResult)
-
         res.json({PostResult,success: "OK"})
-
-
 });
-
+// third and last API for send all the records to the user from database.
 app.post("/",async(req,res)=>{
     console.log(req.body.item_name)
     console.log(req.body.price)
     const np={
         item_name: req.body.item_name,
-        price: req.body.price
-        
+        price: req.body.price       
     }
-
-    const all_result = await Post.find(np);
-
+    const all_result = await Post.findOne();
     console.log(all_result)
+    console.log(np)
     res.json({all_result, success: "OK"})
-
 });
-
+//app listen to the port 5000
 app.listen(5000,function(){
     console.log("Server is running...")
 });
