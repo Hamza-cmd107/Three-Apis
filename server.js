@@ -4,7 +4,7 @@ const express =  require("express");
 const mongoose = require("mongoose");
 const bodyParser =require('body-parser');
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json()); // yahan pehly body-parser.json() likhty thy mgr ab express version >=4.16 m express.json() likhty hai
 
 //requiring modules
 require("./mongo");
@@ -49,7 +49,8 @@ app.post("/",async(req,res)=>{
     console.log(np)
     res.json({all_result, success: "OK"})
 });
-//app listen to the port 5000
-app.listen(5000,function(){
-    console.log("Server is running...")
+//app listen to the port 3000
+app.listen(3000,()=>{
+    console.log("Server starts")
 });
+// module.handler = app;

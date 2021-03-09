@@ -175,9 +175,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sample-app/dev/1614701816746-2021-03-02T16:16:56.746Z/sample-app.zip"
+                "S3Key": "serverless/sample-app/dev/1615218388095-2021-03-08T15:46:28.095Z/sample-app.zip"
               },
-              "Handler": "app/app.handler",
+              "Handler": "server.handler",
               "Runtime": "nodejs12.x",
               "FunctionName": "sample-app-dev-app",
               "MemorySize": 128,
@@ -193,14 +193,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersiondgX5oeFXbWfZwwtLhygUUOjbsnD5MWtI3rIdYUmVh8": {
+          "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "QdruzamyMXb7yhAsG8or3GRx/pwec15LigUQPYbtvkM="
+              "CodeSha256": "DQnTspWLQNGEoj2RDtMwUtWsconyqMi366PQ9JPWWhM="
             }
           },
           "ApiGatewayRestApi": {
@@ -412,7 +412,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1614701804848": {
+          "ApiGatewayDeployment1615218346900": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -474,7 +474,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersiondgX5oeFXbWfZwwtLhygUUOjbsnD5MWtI3rIdYUmVh8"
+              "Ref": "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0"
             }
           },
           "ServiceEndpoint": {
@@ -589,7 +589,7 @@
     "pluginsData": {},
     "functions": {
       "app": {
-        "handler": "app/app.handler",
+        "handler": "server.handler",
         "events": [
           {
             "http": {
@@ -650,13 +650,14 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersiondgX5oeFXbWfZwwtLhygUUOjbsnD5MWtI3rIdYUmVh8"
+        "versionLogicalId": "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0"
       }
     },
     "configValidationMode": "warn",
     "serviceFilename": "serverless.yml",
     "layers": {},
     "initialServerlessConfig": {
+      "useDotenv": true,
       "service": {
         "$ref": "$[\"service\"][\"serviceObject\"]"
       },
@@ -668,10 +669,10 @@
       }
     },
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "C:\\Users\\hamza\\OneDrive\\Desktop\\Proxima\\Hamza4\\.serverless\\sample-app.zip"
+    "artifact": "C:\\Users\\hamza\\Desktop\\Proxima\\Hamza4\\.serverless\\sample-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sample-app/dev/1614701816746-2021-03-02T16:16:56.746Z",
+    "artifactDirectoryName": "serverless/sample-app/dev/1615218388095-2021-03-08T15:46:28.095Z",
     "artifact": "sample-app.zip"
   }
 }

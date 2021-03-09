@@ -1,3 +1,4 @@
+useDotenv: true
 service: sample-app
 provider:
   name: aws
@@ -7,7 +8,7 @@ provider:
   memorySize: 128
 functions:
   app:
-    handler: app/app.handler
+    handler: server.handler
     events: 
       - http: 
           path: /
