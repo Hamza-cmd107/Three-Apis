@@ -1,5 +1,5 @@
 useDotenv: true
-service: sixth-try
+service: seventh-try
 provider:
   name: aws
   runtime: nodejs12.x
