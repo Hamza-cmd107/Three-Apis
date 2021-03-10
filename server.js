@@ -53,4 +53,4 @@ app.post("/",async(req,res)=>{
 app.listen(3000,()=>{
     console.log("Server starts")
 });
-// module.handler = app;
+module.exports.handler = serverless(server)
