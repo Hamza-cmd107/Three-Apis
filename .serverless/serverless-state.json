@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "sample-app",
+    "service": "fifth-app",
     "serviceObject": {
-      "name": "sample-app"
+      "name": "fifth-app"
     },
     "provider": {
       "name": "aws",
@@ -88,7 +88,7 @@
           "AppLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/sample-app-dev-app"
+              "LogGroupName": "/aws/lambda/fifth-app-dev-app"
             }
           },
           "IamRoleLambdaExecution": {
@@ -116,7 +116,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "sample-app",
+                        "fifth-app",
                         "dev",
                         "lambda"
                       ]
@@ -133,7 +133,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/sample-app-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/fifth-app-dev*:*"
                           }
                         ]
                       },
@@ -144,7 +144,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/sample-app-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/fifth-app-dev*:*:*"
                           }
                         ]
                       }
@@ -157,7 +157,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "sample-app",
+                    "fifth-app",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -175,11 +175,11 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sample-app/dev/1615218388095-2021-03-08T15:46:28.095Z/sample-app.zip"
+                "S3Key": "serverless/fifth-app/dev/1615380093260-2021-03-10T12:41:33.260Z/fifth-app.zip"
               },
               "Handler": "server.handler",
               "Runtime": "nodejs12.x",
-              "FunctionName": "sample-app-dev-app",
+              "FunctionName": "fifth-app-dev-app",
               "MemorySize": 128,
               "Timeout": 6,
               "Role": {
@@ -193,20 +193,20 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0": {
+          "AppLambdaVersionZsfdDw5GgC5g00nJhYdrkskQajXI9gkkhVzzPSYuHw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "DQnTspWLQNGEoj2RDtMwUtWsconyqMi366PQ9JPWWhM="
+              "CodeSha256": "IUJQ4bPVld88t6JIadhEqY4kvndRq5b9/w+TrvZ+wr4="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-sample-app",
+              "Name": "dev-fifth-app",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -412,7 +412,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1615218346900": {
+          "ApiGatewayDeployment1615380051403": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -474,7 +474,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0"
+              "Ref": "AppLambdaVersionZsfdDw5GgC5g00nJhYdrkskQajXI9gkkhVzzPSYuHw"
             }
           },
           "ServiceEndpoint": {
@@ -644,13 +644,13 @@
             }
           }
         ],
-        "name": "sample-app-dev-app",
+        "name": "fifth-app-dev-app",
         "package": {},
         "memory": 128,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionuqJojw5xE75UO0dKDgi5m8XrBjjz1CtgCnaXSdkur0"
+        "versionLogicalId": "AppLambdaVersionZsfdDw5GgC5g00nJhYdrkskQajXI9gkkhVzzPSYuHw"
       }
     },
     "configValidationMode": "warn",
@@ -669,10 +669,10 @@
       }
     },
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "C:\\Users\\hamza\\Desktop\\Proxima\\Hamza4\\.serverless\\sample-app.zip"
+    "artifact": "C:\\Users\\hamza\\Desktop\\Proxima\\Hamza4\\.serverless\\fifth-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sample-app/dev/1615218388095-2021-03-08T15:46:28.095Z",
-    "artifact": "sample-app.zip"
+    "artifactDirectoryName": "serverless/fifth-app/dev/1615380093260-2021-03-10T12:41:33.260Z",
+    "artifact": "fifth-app.zip"
   }
 }
