@@ -3,6 +3,8 @@ const serverless = require("serverless-http");
 const express =  require("express");
 const mongoose = require("mongoose");
 const bodyParser =require('body-parser');
+const dotenv = require("dotenv");
+dotenv.config();
 const app = express();
 app.use(express.json()); // yahan pehly body-parser.json() likhty thy mgr ab express version >=4.16 m express.json() likhty hai
 
