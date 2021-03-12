@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "sixth-try",
+    "service": "seventh-try",
     "serviceObject": {
-      "name": "sixth-try"
+      "name": "seventh-try"
     },
     "provider": {
       "name": "aws",
@@ -88,7 +88,7 @@
           "AppLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/sixth-try-dev-app"
+              "LogGroupName": "/aws/lambda/seventh-try-dev-app"
             }
           },
           "IamRoleLambdaExecution": {
@@ -116,7 +116,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "sixth-try",
+                        "seventh-try",
                         "dev",
                         "lambda"
                       ]
@@ -133,7 +133,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/sixth-try-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/seventh-try-dev*:*"
                           }
                         ]
                       },
@@ -144,7 +144,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/sixth-try-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/seventh-try-dev*:*:*"
                           }
                         ]
                       }
@@ -157,7 +157,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "sixth-try",
+                    "seventh-try",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -175,11 +175,11 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sixth-try/dev/1615381971517-2021-03-10T13:12:51.517Z/sixth-try.zip"
+                "S3Key": "serverless/seventh-try/dev/1615385098113-2021-03-10T14:04:58.113Z/seventh-try.zip"
               },
               "Handler": "server.handler",
               "Runtime": "nodejs12.x",
-              "FunctionName": "sixth-try-dev-app",
+              "FunctionName": "seventh-try-dev-app",
               "MemorySize": 128,
               "Timeout": 6,
               "Role": {
@@ -193,20 +193,20 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionClvD1MogGFR0OO2gThN88uCZzEGCDHwZBSGll5o0fE": {
+          "AppLambdaVersionGHMoKYCXN7W0DFQQV3W0N3fj6MCv7QKVRlNvJxt9XQk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "ikPWz28PNEh9iLNitMKSoDhzukOOVnGtxtkTFBu0uYI="
+              "CodeSha256": "I/2m/J4LmHykZZuLDh5igtyGm8Y2mbqb/QVYmn3P+Oc="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-sixth-try",
+              "Name": "dev-seventh-try",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -412,7 +412,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1615381933203": {
+          "ApiGatewayDeployment1615385014882": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -474,7 +474,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionClvD1MogGFR0OO2gThN88uCZzEGCDHwZBSGll5o0fE"
+              "Ref": "AppLambdaVersionGHMoKYCXN7W0DFQQV3W0N3fj6MCv7QKVRlNvJxt9XQk"
             }
           },
           "ServiceEndpoint": {
@@ -644,13 +644,13 @@
             }
           }
         ],
-        "name": "sixth-try-dev-app",
+        "name": "seventh-try-dev-app",
         "package": {},
         "memory": 128,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionClvD1MogGFR0OO2gThN88uCZzEGCDHwZBSGll5o0fE"
+        "versionLogicalId": "AppLambdaVersionGHMoKYCXN7W0DFQQV3W0N3fj6MCv7QKVRlNvJxt9XQk"
       }
     },
     "configValidationMode": "warn",
@@ -669,10 +669,10 @@
       }
     },
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "C:\\Users\\hamza\\Desktop\\Proxima\\Hamza4\\.serverless\\sixth-try.zip"
+    "artifact": "C:\\Users\\hamza\\Desktop\\Proxima\\Hamza4\\.serverless\\seventh-try.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sixth-try/dev/1615381971517-2021-03-10T13:12:51.517Z",
-    "artifact": "sixth-try.zip"
+    "artifactDirectoryName": "serverless/seventh-try/dev/1615385098113-2021-03-10T14:04:58.113Z",
+    "artifact": "seventh-try.zip"
   }
 }
